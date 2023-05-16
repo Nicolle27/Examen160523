@@ -1,0 +1,30 @@
+type Query{
+    listarLibro : [Libro],
+    listarLibroPorId(id : String) : Libro,
+    listarEditorial : [Editorial],
+    listarEditorialPorId(id : String) : Editorial
+    listarAutor : [Autor],
+    listarAutorPorId(id : String) : Autor
+}
+type Libro{
+    id : String,
+    tituloLibro : String,
+    discripcionLibro : String,
+    paginaLibro : Int,
+    edicionLibro : String,
+    editorial:Editorial
+    autor: Autor
+}
+
+type Editorial{
+    id : String
+    nombreEditorial : String,
+    paisEditorial: String,
+    libro : [Libro]
+}
+type Autor{
+    id : String
+    nombreAutor : String,
+    ApellidoAutor : String,
+    libro : [Libro]
+}
